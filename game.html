@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<html lang="en">
+<head>
+  <style type="text/css">
+    <!--
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #1f1f7f;
+        text-align:center;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .cOutside {
+      background-color: blue;
+      min-height: 150px;
+      width: 100%;
+      height: 100%;
+    }
+    #iPhaser3Content { background-color: #200101; width: 100%; height:100%; align-content: center;}
+    -->
+  </style>
+
+  <!--
+  //<script src="https://cdn.jsdelivr.net/npm/phaser@3.20.1/dist/phaser-arcade-physics.min.js"></script>
+  -->
+  <script src="../phaser-master/dist/phaser.min.js"></script>
+  <script src="./src/main.js"></script>
+  <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+</head>
+<body onload="p3onLoad();">
+  <div id="iOutside" class="cOutside">
+    <div id="iPhaser3Content" class="cContent"></div>
+  </div>
+</body>
+</html>

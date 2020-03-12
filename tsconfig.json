@@ -1,0 +1,16 @@
+//https://qiita.com/takao_mofumofu/items/4f8d365846e2f770bd6e
+{
+  "compilerOptions": {
+  "target": "ES6",
+  "module": "amd",
+  "sourceMap": true,
+  // 出力するファイル名を指定
+  "outFile": "./src/main.js",
+  "lib": [
+          "dom",
+          "es6",
+          "scripthost",
+          "es2016" //"es2015.promise"
+  ]
+  }
+}

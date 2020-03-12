@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<html lang="ja">
+<head>
+  <style type="text/css">
+    <!--
+    html {
+      height: 100%;
+    }
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #1f1f7f;
+      color: white;
+      text-align:center;
+      overflow-x: hidden;
+    }
+    table{
+      width: 90%;
+    }
+    .cButton{
+      width: 50%;
+    }
+    .cOutside {
+      background-color: blue;
+      min-height: 150px;
+      width: 100%;
+      height: 100%;
+    }
+    .cHint{
+      font-size: 60%;
+    }
+    -->
+  </style>
+  <script>
+    function toSubmit(){
+      var form = document.getElementById( 'iForm' );
+      form.method = 'GET';
+      form.action = document.getElementById( 'iGame' ).value;
+      form.submit();
+    }
+    function getUrlVars(){
+      var vars = {}; 
+      var param = location.search.substring(1).split('&');
+      for(var i = 0; i < param.length; i++) {
+          var keySearch = param[i].search(/=/);
+          var key = '';
+          if(keySearch != -1) key = param[i].slice(0, keySearch);
+          var val = param[i].slice(param[i].indexOf('=', 0) + 1);
+          if(key != '') vars[key] = decodeURI(val);
+      } 
+      return vars; 
+    }
+
+    function onLoadFunc(){
+      var maxCnt=99;
+      addShuffleOption(maxCnt);
+      var vars = getUrlVars();
+      var shuffleNum = (!(typeof vars["nShuffle"] === "undefined")) ? vars["nShuffle"] : 0;
+      var grade = (!(typeof vars["nGrade"] === "undefined")) ? vars["nGrade"] : 6;
+      document.getElementById("iShuffle").value = Math.min(Math.max(shuffleNum,0),maxCnt);
+      document.getElementById("iGrade").value = Math.min(Math.max(grade,1),6);
+    }
+    function toQrCode(){
+      var shuffleNum = document.getElementById("iShuffle").value;
+      var grade = document.getElementById("iGrade").value;
+      window.location.href = './qr.html?nGrade='+grade+'&nShuffle='+shuffleNum+'';
+    }
+    function toHelp(){
+      var shuffleNum = document.getElementById("iShuffle").value;
+      var grade = document.getElementById("iGrade").value;
+      window.location.href = './help.html?nGrade='+grade+'&nShuffle='+shuffleNum+'';
+    }
+    function addShuffleOption(_maxCnt){
+      for(var i=10;i<=_maxCnt;++i){
+        var elem = document.getElementById("iShuffle");
+        var op = document.createElement('option');
+        op.value = i;
+        op.appendChild(document.createTextNode(i+'回まであり'));
+        elem.appendChild(op);
+      }
+    }
+  </script>
+
+  <meta charset="utf-8" />
+    <title>あるないん</title>
+</head>
+<body onload = "onLoadFunc()">
+  <div id="iOutside" class="cOutside">
+    <img src="docImage/al9logo.png" width=40% alt="小学校で習う漢字を全部使ったカードゲーム あるないん"/>
+    <br/>
+    <div align="center">
+      <form id="iForm">
+        <table>
+        <tr><td align="left"><select id="iGame" hidden><option value="./game.html">al9</option></select></td></tr>
+        <tr><td align="right">使用漢字：</td><td align="left">
+            <select id="iGrade" name="nGrade">
+                <option value="1">1年生のみ</option>
+                <option value="2">1-2年生</option>
+                <option value="3">1-3年生</option>
+                <option value="4">1-4年生</option>
+                <option value="5">1-5年生</option>
+                <option value="6" selected>1-6年生(全て)</option>
+            </select>
+        </td></tr>
+        <!--
+        <tr><td align="right">sound</td>
+          <td align="left">
+              <input type="checkbox" name="nSound" checked/>
+              IEならサウンドOFF <input type="checkbox" name="nSoundAuto" checked/>
+        </td></tr>
+        -->
+        <tr><td align="right">シャッフル</td><td align="left">
+            <select id="iShuffle" name="nShuffle">
+            <option value="0" selected>なし</option>
+            <option value="1">1回まであり</option>
+            <option value="2">2回まであり</option>
+            <option value="3">3回まであり</option>
+            <option value="4">4回まであり</option>
+            <option value="5">5回まであり</option>
+            <option value="6">6回まであり</option>
+            <option value="7">7回まであり</option>
+            <option value="8">8回まであり</option>
+            <option value="9">9回まであり</option>
+        </select>
+        </table>
+        <br/>
+        <input type="button" class="cButton" value="ゲーム開始" onclick="toSubmit()"/><br/>
+        <small class="cHint">*初回ロード時は5-10秒ほどかかることがあります</small><br/>
+    </form>
+    <br/>
+    <br/>
+    <input type="button" class="cButton" value="遊び方表示" onclick="toHelp()"/><br/>
+    <br/>
+    <input type="button" class="cButton" value="QRコード表示" onclick="toQrCode()"/></div>
+    <small class="cHint">*QRコードはプレイヤー全員が同じ条件で始めるのに便利です。</small><br/>
+    <!--
+    <br /><br /><br /><br /><br /><a rel="license" href="./opensource.html"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+    -->
+    <br /><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /><br />
+    <small class="cHint">*あるないん はクリエイティブ・コモンズ ライセンスの下で提供されています。</small><br/>
+  </div>
+</body>
+</html>

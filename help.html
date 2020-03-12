@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="description" content="Al9 help document"/>
+<html lang="ja">
+<head>
+  <style type="text/css">
+    <!--
+      html {
+        height: 100%;
+      }
+      body {
+        font-size: 2.5vw;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #202020;
+        color: white;
+        text-align:center;
+        overflow-x: hidden;
+    }
+    b{
+      color:yellow;
+    }
+    .cOutside {
+      background-color: #202020;
+      min-height: 150px;
+      width: 100%;
+      height: 100%;
+    }
+    .cButton{
+      width: 50%;
+    }
+    .barImage{
+      vertical-align: middle;
+      margin: 2px;
+    }
+
+    .balloon1-left {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  padding: 7px 10px;
+  min-width: 40%;
+  max-width: 100%;
+  color: #555;
+  font-size: 12px;
+  background: #e0edff;
+	text-align: left;
+	display: inline-block;
+  }
+
+.balloon1-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  margin-top: -10px;
+  border: 10px solid transparent;
+  border-right: 10px solid #e0edff;
+}
+
+.balloon1-left p {
+  margin: 0;
+  padding: 0;
+}
+
+  -->
+  </style>
+  <script>
+    function getUrlVars(){
+    var vars = {}; 
+    var param = location.search.substring(1).split('&');
+    for(var i = 0; i < param.length; i++) {
+        var keySearch = param[i].search(/=/);
+        var key = '';
+        if(keySearch != -1) key = param[i].slice(0, keySearch);
+        var val = param[i].slice(param[i].indexOf('=', 0) + 1);
+        if(key != '') vars[key] = decodeURI(val);
+    } 
+    return vars; 
+  }
+  function onBack(){
+    console.log("back");
+    var vars = getUrlVars();
+    if(vars['isTab']!=undefined){
+      window.close();
+    }else{
+      var url="./index.html";
+      var vars = getUrlVars();
+      var shuffleNum = (!(typeof vars["nShuffle"] === "undefined")) ? vars["nShuffle"] : 3;
+      var grade = (!(typeof vars["nGrade"] === "undefined")) ? vars["nGrade"] : 6;
+      location.href=url+'?nGrade='+grade+'&nShuffle='+shuffleNum+'';
+    }
+  }
+  </script>
+
+  <meta charset="utf-8" />
+    <title>あるないん</title>
+</head>
+<body>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- WebCardGame00 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3504902108000381"
+     data-ad-slot="6987101050"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+ad
+<hr/>
+  <div id="iOutside" class="cOutside">
+    <div id="iContent" class="cContent">
+      <input type="button" class="cButton" onclick="onBack()" value="閉じる"><br/>
+      <img src="docImage/al9logo.png" width=20% alt="小学校で習う漢字を全部使ったカードゲーム あるないん"/><br/>
+      <b>あるないん 遊び方</b><br/>
+      <hr/>
+      <br/>
+      遊び方１：<b>連想あるないん</b><br/>
+      概要：親と関連のありそうなカードを出すゲーム<br/>
+      プレイ人数:3－9名程度<br/>
+      プレイ時間：5分－<br/>
+
+      基本はシャッフルなしでスタートしますが、<br/>
+      お子様と遊ぶ時などは適宜ありにしてください。<br/>
+      <img src="./docImage/ss_no_shuffle.png" alt="設定-シャッフルなし" width="200" /><br/>
+      <br/>
+      ゲームを開始すると画面に9枚の手札が現れます。<br/>
+      <b>最初は画面を誰にも見せないようにしておいてください</b>。<br/>
+      はじめに、じゃんけんで最初の親を決めます。<br/>
+      親は9枚の漢字カードから1枚選択して場に出します。<br/>
+      漢字カードはなるべく色々な漢字と関連付けられそうなものを選びます。<br/>
+      （シャッフルありの場合は出す前にシャッフルできます）<br/>
+      <img src="./docImage/ss_start_game.png" alt="中央の文字を選択" width="200" /><br/>
+      例えば親が「山」なら、子は「川」「里」「田」等を選ぶと<br/>
+      「自然」「田舎」のようなくくりで親のカードと関連付けられます。<br/>
+      <img src="./docImage/ss_1st_draw.png" alt="「山」のカード選択" width="200" /><br/>
+      親から時計回りに、子もカードを選択して場に出します<br/>
+      （シャッフルありの場合は出す前にシャッフルできます）。<br/>
+      子は親が出したカードに関連がありそうなカードを選んで出します。<br/>
+      <img src="./docImage/ss_1st_draw.png" alt="「山」カード" width="100" />
+      <img src="./docImage/ss_2nd_draw.png" alt="「田」カード" width="90" /><br/>
+      <br/>
+      全員のカードが出そろったら、子の各カードが親のカードと<br/>
+      関連があるかどうか多数決で決めていきます。<br/>
+      <img src="./docImage/ss_1st_draw.png" alt="「山」カード" width="25%" />
+      <img src="./docImage/ss_2nd_draw.png" alt="「田」カード" width="22%" />
+      <img src="./docImage/ss_3rd_draw.png" alt="「虫」カード" width="22%" /><br/>
+      <img src="./docImage/ss_4th_draw.png" alt="「竹」カード" width="22%" />
+      <img src="./docImage/ss_5th_draw.png" alt="「島」カード" width="22%" />
+      <img src="./docImage/ss_6th_draw.png" alt="「庭」カード" width="22%" /><br/>
+      <br/>
+      （親/子）<div class="balloon1-left">田、虫、竹は山と関連アリだね。</div><br/>
+      （子１）<div class="balloon1-left">島はアリじゃないかな。庭はナシ。</div><br/>
+      （子２）<div class="balloon1-left">そうだね。島はアリでいいかな。</div><br/>
+      （子５）<div class="balloon1-left">でもほら、田舎は庭が広いから・・・</div><br/>
+      （子１）<div class="balloon1-left">ないな・・・</div><br/>
+      （子２）<div class="balloon1-left">ねーよ</div><br/>
+      　（親）<div class="balloon1-left">じゃあナシかな・・・</div><br/>
+      （子５）<div class="balloon1-left">えー・・・</div><br/>
+      <b>多数決で同数の場合は親が決めます。</b><br/>
+      （親）<div class="balloon1-left">多数決の結果、島は同数なのでアリとします。</div><br/><br/>
+      <img src="./docImage/ss_all_cards.png" alt="カード選択" width="80%" /><br/>
+      <br/>
+      判定が終わったら、親は「ある」の数を点数として、<br/>
+      子は自分が「ある」だったら１点加算します。<br/>
+      親（「ある」が５枚）<img src="./docImage/ss_point_parent.png" class="barImage" alt="親は「ある」の人数分の得点" width="45%" /><br/>
+      子１－４（「ある」）<img src="./docImage/ss_point_child_ok.png" class="barImage" alt="子1～4は「ある」なので１点" width="45%" /><br/>
+      　　子５（「ない」）<img src="./docImage/ss_point_child_ng.png" class="barImage" alt="子5は「ない」なので０点" width="45%" /><br/>
+      <br/>
+      <br/>
+      得点を加算したら時計回りに親を移動し、次のターンに進みます。<br/>
+      これを１周繰り返して、一番得点の高い人が勝ちです。<br/>
+      最高得点が同じ場合はもう一周繰り返します。<br/><br/>
+      <input type="button" class="cButton" onclick="onBack()" value="閉じる">
+    <br/>
+      <hr/>
+      <br/>
+      遊び方２：<b>連鎖あるないん</b><br/>
+      概要：親のカードと熟語を作るゲーム<br/>
+      プレイ人数:４－9名程度<br/>
+      プレイ時間：10分－<br/>
+      漢字多め（1-6年生）、シャッフルありでスタートします。<br/>
+      シャッフル回数は<br/>
+      3人プレイなら10回<br/>
+      4人プレイなら6回<br/>
+      5人以上なら5回<br/>
+      を目安とし、適宜調整してください。<br/>
+      <img src="./docImage/ss_no_shuffle.png" alt="設定-シャッフルあり" width="80%" /><br/>
+      <br/>
+      親が最初のカードを選択して場に出します。<br/>
+      カードはなるべく<b>単語が作りにくい</b>ものを選びます。<br/>
+      <img src="./docImage/ss_game2_kei.png" alt="「警」カード" width="40%" /><br/>
+      <br/>
+      子は親が出したカードの上下左右につながる文字を<br/>
+      提示された９文字から探します。<br/>
+      <b>熟語をネット等で調べるのは「あり」です。</b><br/>
+      例えば親が「警」を出したら、県/婦/察 等を探します。<br/>
+      すでに「婦」「警」のように並んで出されていたら<br/>
+      「婦」につなげて「人」「主」等も置くことができます。<br/>
+      <img src="./docImage/ss_game2_set_hito.png" alt="横に「婦警」縦に「婦人」" width="80%" /><br/>
+      <br/>
+      提示された９文字から見つからなければパスをし、<br/>
+      パスをしている間に一度シャッフルします。<br/>
+      <br/>
+      <br/>
+      <b>親以外で</b>最初に置いた人に人数-１点（５人プレイなら4）、<br/>
+      次に置いた人に人数-2点（５人プレイなら3）、が加算されます。<br/>
+      シャッフルを使い切っても最後まで置けなかった人は０点、<br/>
+      親は最後まで置けなかった人数ぶん得点が加算されます。<br/>
+      <br/>
+      得点を加算したら時計回りに親を移動し、次のターンに進みます。<br/>
+      これを１周繰り返して、一番得点の高い人が勝ちです。<br/>
+      最高得点が同じ場合はもう一周繰り返します。<br/>
+      <br/><br/>
+    <input type="button" class="cButton" onclick="onBack()" value="閉じる">
+    <br/>
+    <br/>
+    <hr/>
+    twitter:<a href="https://twitter.com/emesiw">@emesiw</a><br>
+<hr/>
+ad      
+
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Ad-Bingo banner -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3504902108000381"
+     data-ad-slot="1009586308"
+     data-ad-format="link"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br/>
+<img src="docImage/al9CM.png" width="80%" alt="ポスター"><br/>
+
+    </div>
+  </div>
+  <br/>
+</body>
+</html>
